@@ -1,0 +1,220 @@
+:root {
+  --primary-color: #5c061b;
+  --primary-hover: #7e0f2b;
+  --gold-color: #d4af37;
+  --gold-dark: #aa7c11;
+  --bg-color: #fcfbf9;
+  --text-dark: #221c1a;
+  --text-muted: #665b57;
+  --card-bg: #ffffff;
+  --border-color: #eae5e0;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Outfit', sans-serif;
+  --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #fff2be 0%, #e2be4a 50%, #bd8e1b 100%);
+  --maroon-gradient: linear-gradient(135deg, #5c061b 0%, #7e0f2b 100%);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 16px rgba(92, 6, 27, 0.06);
+  --shadow-lg: 0 16px 32px rgba(92, 6, 27, 0.12);
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Utilities */
+.luxury-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--maroon-gradient);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+.luxury-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(92, 6, 27, 0.2);
+}
+
+.luxury-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 10px 22px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.luxury-btn-secondary:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.gold-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--gold-gradient);
+  color: #221c1a;
+  border: none;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+.gold-btn:hover {
+  background: var(--gold-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
+}
+
+.glass-nav {
+  background: rgba(252, 251, 249, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 80px;
+  transition: all 0.3s ease;
+}
+
+/* Card design */
+.lehenga-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.lehenga-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold-color);
+}
+
+.card-media {
+  position: relative;
+  height: 380px;
+  background-color: #f3ece6;
+  overflow: hidden;
+}
+.card-media img, .card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.lehenga-card:hover .card-media img {
+  transform: scale(1.05);
+}
+
+/* Badges */
+.badge-discount {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.badge-availability {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-dark);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 2;
+  border: 1px solid var(--border-color);
+}
+.badge-availability.rented {
+  border-color: #d9534f;
+  color: #d9534f;
+  background: #fdf2f2;
+}
+.badge-availability.available {
+  border-color: #5cb85c;
+  color: #5cb85c;
+  background: #f2fdf2;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
